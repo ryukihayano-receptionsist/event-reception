@@ -1,6 +1,35 @@
 import type { Metadata } from 'next'
+import { Noto_Sans_JP, Roboto, DM_Sans, Poppins } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
+
+const notoSansJP = Noto_Sans_JP({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+  variable: '--font-noto-sans-jp',
+})
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+  variable: '--font-roboto',
+})
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+  variable: '--font-dm-sans',
+})
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['700'],
+  display: 'swap',
+  variable: '--font-poppins',
+})
 
 export const metadata: Metadata = {
   title: '招待レセプション | イベント受付システム',
@@ -28,14 +57,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja">
+    <html lang="ja" className={`${notoSansJP.variable} ${roboto.variable} ${dmSans.variable} ${poppins.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Poppins:wght@700&family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
+        {/* LCP改善: ヒーロー画像をプリロード */}
+        <link rel="preload" as="image" href="/img/img_fv--pc.webp" type="image/webp" />
         <Script id="gtm" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

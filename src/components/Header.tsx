@@ -45,6 +45,7 @@ export default function Header({ isFrontPage = false }: HeaderProps) {
               alt="招待レセプション"
               width={396}
               height={104}
+              fetchPriority="high"
             />
           </a>
 

@@ -126,7 +126,7 @@ body:not(.home):not(.page-template-front-page) {
 }
 
 body {
-  font-family: "Noto Sans JP", "Roboto", "DM Sans", sans-serif;
+  font-family: var(--font-noto-sans-jp), var(--font-roboto), var(--font-dm-sans), "Noto Sans JP", "Roboto", "DM Sans", sans-serif;
   color: var(--color-text-main);
   background: #ffffff;
   line-height: 1.6;
