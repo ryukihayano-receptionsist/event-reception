@@ -1,0 +1,278 @@
+/* ============================================================
+   Header（ヘッダー）
+   assets/css/header.css
+============================================================ */
+
+/* ----------------------------------
+   ベース構造
+---------------------------------- */
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.l-header__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.l-header__logo {
+  display: block;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.l-header__logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+/* ----------------------------------
+   ナビゲーション
+---------------------------------- */
+.l-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.l-header__nav-list {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.l-header__nav-list li {
+  white-space: nowrap;
+}
+
+.l-header__nav-list a {
+  color: #333;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.l-header__nav-list a:hover {
+  color: #0098BB;
+}
+
+/* ----------------------------------
+   CTA ボタン群（右側）
+---------------------------------- */
+.l-header__nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* =======================
+   CTA ボタン
+======================= */
+.c-button__header {
+  height: 40px;
+  border-radius: 100vmax;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  padding-inline: 16px;
+  background: #EA526F;
+  border: 2px solid transparent;
+  transition: 0.25s ease;
+}
+
+.c-button__header:hover {
+  opacity: 0.8;
+}
+
+/* 枠付き */
+.c-button__header--frame {
+  height: 40px;
+  border-radius: 100vmax;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #0098BB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  padding-inline: 16px;
+  background: #fff;
+  border: 2px solid #0098BB;
+  transition: 0.25s ease;
+}
+
+.c-button__header--frame:hover {
+  background: #0098BB;
+  color: #ffffff;
+}
+
+/* ----------------------------------
+   スクロール時（小型ヘッダー）
+---------------------------------- */
+.l-header.is-fixed {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* ----------------------------------
+   レスポンシブ対応
+---------------------------------- */
+@media (max-width: 1100px) {
+  .l-header__nav-list {
+    gap: 12px;
+  }
+  .l-header__nav-list a {
+    font-size: 12px;
+  }
+  .l-header__nav-cta {
+    gap: 8px;
+  }
+  .c-button__header,
+  .c-button__header--frame {
+    font-size: 12px;
+    min-width: 100px;
+    padding-inline: 12px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 960px) {
+  .l-header__inner {
+    padding: 12px 20px;
+  }
+
+  .l-header__logo-img {
+    height: 32px;
+  }
+
+  /* ハンバーガーボタン */
+  .l-header__hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .l-header__hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #333;
+    border-radius: 1px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* ハンバーガー → × に変化 */
+  .l-header__hamburger.is-active .l-header__hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .l-header__hamburger.is-active .l-header__hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .l-header__hamburger.is-active .l-header__hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* モバイルナビゲーション（ドロップダウン方式 ― rcp2026準拠） */
+  .l-header__nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 10px 24px 16px;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 1000;
+  }
+
+  .l-header__nav.is-open {
+    display: flex;
+  }
+
+  .l-header__nav-list {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .l-header__nav-list li {
+    border-bottom: 1px solid #eee;
+  }
+
+  .l-header__nav-list a {
+    display: block;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .l-header__nav-cta {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .c-button__header,
+  .c-button__header--frame {
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+  }
+
+  /* オーバーレイ（ドロップダウン方式では不使用） */
+  .l-header__overlay {
+    display: none !important;
+  }
+}
+
+/* PC表示ではハンバーガーを非表示 */
+@media (min-width: 961px) {
+  .l-header__hamburger {
+    display: none;
+  }
+
+  .l-header__overlay {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .l-header__inner {
+    gap: 16px;
+  }
+}

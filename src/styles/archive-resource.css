@@ -1,0 +1,49 @@
+/* ===========================================
+  通常ページ用：可読性リセット
+  ※ フロントページ（.l-main--front）では front-page.css の
+    流動的 rem 設計を活かすため除外する
+=========================================== */
+html:not(:has(.l-main--front)) {
+  font-size: 10px !important;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* ===========================================
+   リソース一覧ページ
+=========================================== */
+.resource-archive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.resource-archive li {
+  list-style: none;
+  border: 1px solid var(--color-gray-5);
+  border-radius: 8px;
+  padding: 16px;
+  background-color: var(--color-bg);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.resource-archive li:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.resource-archive a {
+  color: var(--color-text);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.resource-archive a:hover {
+  color: var(--color-primary-hover);
+}

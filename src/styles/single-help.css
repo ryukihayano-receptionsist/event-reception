@@ -1,0 +1,411 @@
+/* ========================================
+   single-help.css
+   ヘルプ記事 詳細ページ
+======================================== */
+
+/* ベースレイアウト */
+.single-help .help-single {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 120px 24px 80px;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  background: #fff;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* タイトル */
+.single-help .page-header {
+  margin-bottom: 40px;
+}
+
+.single-help .page-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0 0 16px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e0e0e0;
+  color: #333;
+}
+
+.single-help .post-meta {
+  font-size: 13px;
+  color: #888;
+}
+
+/* =========================================================
+   本文 article-content
+========================================================= */
+.single-help .article-content {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #333;
+}
+
+.single-help .article-content p {
+  margin: 0 0 24px;
+}
+
+/* 見出し h2 */
+.single-help .article-content h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 56px 0 20px;
+  padding-left: 16px;
+  border-left: 4px solid #0066cc;
+  line-height: 1.4;
+}
+
+/* 見出し h3 */
+.single-help .article-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 40px 0 16px;
+  color: #0066cc;
+  line-height: 1.4;
+}
+
+/* 見出し h4 */
+.single-help .article-content h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 32px 0 12px;
+  color: #333;
+}
+
+/* =========================================================
+   テーブル
+========================================================= */
+.single-help .article-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 32px 0;
+  font-size: 15px;
+  border: 1px solid #e0e0e0;
+}
+
+.single-help .article-content th,
+.single-help .article-content td {
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  vertical-align: top;
+  text-align: left;
+}
+
+.single-help .article-content thead th {
+  background: #f5f5f5;
+  font-weight: 600;
+}
+
+.single-help .article-content tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* スクロール対応（スマホ） */
+.single-help .table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 32px 0;
+}
+
+.single-help .table-wrap table {
+  margin: 0;
+  min-width: 600px;
+}
+
+/* =========================================================
+   箇条書き（ul）
+========================================================= */
+.single-help .article-content ul {
+  list-style-type: disc;
+  padding-left: 24px;
+  margin: 24px 0;
+}
+
+.single-help .article-content ul ul {
+  list-style-type: circle;
+  margin: 8px 0 8px 16px;
+}
+
+.single-help .article-content ul li {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+/* =========================================================
+   番号付きリスト（ol）
+========================================================= */
+.single-help .article-content ol {
+  counter-reset: list-counter;
+  list-style: none;
+  margin: 32px 0;
+  padding: 0;
+}
+
+.single-help .article-content ol > li {
+  position: relative;
+  counter-increment: list-counter;
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 14px 16px 14px 52px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.single-help .article-content ol > li::before {
+  content: counter(list-counter);
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #0066cc;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 第二階層 */
+.single-help .article-content ol ol {
+  margin: 12px 0 0 24px;
+  list-style: lower-alpha;
+}
+
+.single-help .article-content ol ol li {
+  background: none;
+  border: none;
+  padding: 4px 0 4px 8px;
+  font-size: 15px;
+}
+
+.single-help .article-content ol ol li::before {
+  content: none;
+}
+
+/* =========================================================
+   FAQブロック
+========================================================= */
+.single-help .faq-section {
+  margin: 48px 0;
+  padding-top: 32px;
+  border-top: 2px solid #0066cc;
+}
+
+.single-help .faq-item {
+  margin-bottom: 24px;
+  padding: 20px;
+  border-radius: 8px;
+  background: #f8f9fa;
+}
+
+.single-help .faq-q {
+  font-weight: 600;
+  color: #0066cc;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.single-help .faq-q span {
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.single-help .faq-a {
+  color: #333;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.single-help .faq-a span {
+  font-weight: 700;
+  color: #666;
+  margin-right: 8px;
+}
+
+/* =========================================================
+   画像
+========================================================= */
+.single-help .article-content img {
+  display: block;
+  margin: 24px auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.single-help .article-content .wp-caption {
+  max-width: 100%;
+  margin: 24px auto;
+}
+
+.single-help .article-content .wp-caption img {
+  margin: 0;
+}
+
+.single-help .article-content .wp-caption-text {
+  font-size: 13px;
+  color: #888;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* =========================================================
+   2カラムレイアウト
+========================================================= */
+.single-help .help-two-column {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin: 40px 0;
+  align-items: flex-start;
+}
+
+.single-help .help-two-column__text,
+.single-help .help-two-column__image {
+  flex: 1 1 45%;
+  min-width: 280px;
+}
+
+.single-help .help-two-column__image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.single-help .help-two-column__caption {
+  font-size: 13px;
+  color: #888;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.single-help .help-two-column.image-left {
+  flex-direction: row;
+}
+
+.single-help .help-two-column.image-right {
+  flex-direction: row-reverse;
+}
+
+/* =========================================================
+   3カラムレイアウト（画像30% + テキスト70%）
+========================================================= */
+.single-help .help-three-column {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin: 40px 0;
+  align-items: flex-start;
+}
+
+.single-help .help-three-column__image {
+  flex: 0 0 30%;
+  text-align: center;
+}
+
+.single-help .help-three-column__text {
+  flex: 1 1 65%;
+}
+
+.single-help .help-three-column__image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.single-help .help-three-column__caption {
+  font-size: 13px;
+  color: #888;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.single-help .help-three-column.image-left {
+  flex-direction: row;
+}
+
+.single-help .help-three-column.image-right {
+  flex-direction: row-reverse;
+}
+
+/* =========================================================
+   一覧に戻るリンク
+========================================================= */
+.single-help .back-to-archive {
+  margin-top: 64px;
+  text-align: center;
+}
+
+.single-help .back-to-archive a {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 15px;
+  color: #0066cc;
+  border: 1px solid #0066cc;
+  border-radius: 4px;
+  background: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.single-help .back-to-archive a::before {
+  content: "←";
+  margin-right: 8px;
+  font-weight: 700;
+}
+
+.single-help .back-to-archive a:hover {
+  background: #0066cc;
+  color: #fff;
+}
+
+/* =========================================================
+   レスポンシブ
+========================================================= */
+@media (max-width: 768px) {
+  .single-help .help-single {
+    padding: 100px 16px 60px;
+  }
+
+  .single-help .page-title {
+    font-size: 22px;
+  }
+
+  .single-help .article-content h2 {
+    font-size: 20px;
+    margin-top: 40px;
+  }
+
+  .single-help .article-content h3 {
+    font-size: 18px;
+    margin-top: 32px;
+  }
+
+  .single-help .help-two-column,
+  .single-help .help-three-column {
+    flex-direction: column !important;
+    gap: 24px;
+  }
+
+  .single-help .help-two-column__text,
+  .single-help .help-two-column__image,
+  .single-help .help-three-column__text,
+  .single-help .help-three-column__image {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+}

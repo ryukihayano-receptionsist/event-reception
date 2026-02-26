@@ -1,0 +1,195 @@
+/* ========================================
+   archive-help.css
+   ヘルプ記事一覧ページ
+======================================== */
+
+/* ベースレイアウト */
+.help-archive {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 120px 16px 80px;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  background: #fff;
+  color: #333;
+}
+
+/* ページヘッダー */
+.help-archive .page-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.help-archive .page-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.help-archive .page-description {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* 投稿リスト */
+.help-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 992px) {
+  .help-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 各カード */
+.help-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.help-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+
+.help-item > a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* サムネイル */
+.help-item .thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.help-item .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.help-item:hover .thumb img {
+  transform: scale(1.05);
+}
+
+/* 本文部分 */
+.help-item .content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.help-item h2 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.help-item .excerpt {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.help-item .readmore {
+  font-size: 14px;
+  color: #0066cc;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.help-item:hover .readmore {
+  color: #004999;
+  text-decoration: underline;
+}
+
+/* ページネーション */
+.help-archive .pagination {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.help-archive .pagination .nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.help-archive .pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.help-archive .pagination .page-numbers:hover {
+  background: #f5f5f5;
+}
+
+.help-archive .pagination .page-numbers.current {
+  background: #0066cc;
+  color: #fff;
+  border-color: #0066cc;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  .help-archive {
+    padding: 100px 16px 60px;
+  }
+
+  .help-archive .page-header {
+    margin-bottom: 32px;
+  }
+
+  .help-archive .page-title {
+    font-size: 26px;
+  }
+
+  .help-list {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .help-item .content {
+    padding: 16px;
+  }
+
+  .help-item h2 {
+    font-size: 16px;
+  }
+}
