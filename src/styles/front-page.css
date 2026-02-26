@@ -876,26 +876,34 @@ svg {
   position: relative;
   padding-block: 5rem 7.8rem;
 }
-.p-fv::before {
-  content: "";
+/* ヒーロー画像: next/image (fill) 用コンテナ */
+.p-fv__hero {
   position: absolute;
   top: 0;
   right: 0;
+  pointer-events: none;
+}
+.p-fv__hero--pc {
   width: min(47.734375vw, 73.3rem);
   height: min(37.4609375vw, 55.5rem);
-  background: url(/img/img_fv--pc.webp) no-repeat center bottom/cover;
+}
+.p-fv__hero--sp {
+  display: none;
 }
 @media screen and (max-width: 767px) {
   .p-fv {
     padding-block: 3.6rem 35rem;
   }
-  .p-fv::before {
+  .p-fv__hero--pc {
+    display: none;
+  }
+  .p-fv__hero--sp {
+    display: block;
     top: auto;
     bottom: 1.2rem;
     right: 0;
     width: 36.9rem;
     height: 38.95rem;
-    background: url(/img/img_fv--sp.webp) no-repeat center center/cover;
   }
 }
 
@@ -1918,4 +1926,3 @@ svg {
     display: none !important;
   }
 }
-/*# sourceMappingURL=style.css.map */

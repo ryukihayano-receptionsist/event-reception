@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function AboutSection() {
   return (
     <div className="p-about">
@@ -18,10 +20,28 @@ export default function AboutSection() {
         </p>
       </div>
       <div className="p-about__img js-in-view fade-in-up">
-        <picture>
-          <source media="(min-width: 768px)" srcSet="/img/img_about--pc.webp" />
-          <img src="/img/img_about--sp.webp" loading="lazy" alt="" width={721} height={566} />
-        </picture>
+        <div className="u-pc">
+          <Image
+            src="/img/img_about--pc.webp"
+            alt=""
+            width={1280}
+            height={566}
+            loading="lazy"
+            sizes="100vw"
+            style={{ width: '100%', height: 'auto' }}
+          />
+        </div>
+        <div className="u-sp">
+          <Image
+            src="/img/img_about--sp.webp"
+            alt=""
+            width={721}
+            height={566}
+            loading="lazy"
+            sizes="100vw"
+            style={{ width: '100%', height: 'auto' }}
+          />
+        </div>
       </div>
     </div>
   )

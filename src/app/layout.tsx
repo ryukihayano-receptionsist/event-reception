@@ -59,8 +59,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ja" className={`${notoSansJP.variable} ${roboto.variable} ${dmSans.variable} ${poppins.variable}`}>
       <head>
-        {/* LCP改善: ヒーロー画像をプリロード */}
-        <link rel="preload" as="image" href="/img/img_fv--pc.webp" type="image/webp" />
         <Script id="gtm" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
