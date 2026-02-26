@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function Footer() {
   return (
     <footer className="l-footer js-in-view fade-in-up">
@@ -23,7 +25,7 @@ export default function Footer() {
               </ul>
               <div className="l-footer__company-info">
                 <div className="l-footer__company-logo">
-                  <img src="/img/logo-footer.webp" loading="lazy" alt="Receptionist" width={264} height={64} />
+                  <Image src="/img/logo-footer.webp" alt="Receptionist" width={264} height={64} loading="lazy" sizes="132px" style={{ width: '100%', height: 'auto' }} />
                 </div>
                 <div className="l-footer__company-copyright">
                   &copy; RECEPTIONIST, Inc.<span>All rights reserved.</span>
@@ -33,10 +35,12 @@ export default function Footer() {
           </div>
 
           <div className="l-footer__img">
-            <picture>
-              <source media="(min-width: 768px)" srcSet="/img/img_footer--pc.webp" />
-              <img src="/img/img_footer--sp.webp" loading="lazy" alt="" width={686} height={496} />
-            </picture>
+            <div className="u-pc">
+              <Image src="/img/img_footer--pc.webp" alt="" width={686} height={496} loading="lazy" sizes="(max-width: 767px) 0px, 686px" style={{ width: '100%', height: 'auto' }} />
+            </div>
+            <div className="u-sp">
+              <Image src="/img/img_footer--sp.webp" alt="" width={686} height={496} loading="lazy" sizes="(min-width: 768px) 0px, 100vw" style={{ width: '100%', height: 'auto' }} />
+            </div>
           </div>
         </div>
       </div>

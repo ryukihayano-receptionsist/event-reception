@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const steps = [
   { num: 1, title: '招待者ごとに一意のQRを発行', text: 'それぞれのゲストに受付・入場用のQRを発行。受付で名刺確認する必要はありません。' },
   { num: 2, title: 'スマホやiPadで簡単受付', text: '主催者側は、ブラウザとカメラがついた端末を使って、ゲストのQRを読み取るだけ。' },
@@ -20,17 +22,19 @@ export default function FlowSection() {
         </div>
         <div className="p-flow__container js-in-view fade-in-up">
           <div className="p-flow__img">
-            <picture>
-              <source media="(min-width: 768px)" srcSet="/img/img_flow--pc.webp" />
-              <img src="/img/img_flow--sp.webp" loading="lazy" alt="イベント情報を登録、メールでゲストを招待し、当日はQRコードで受付、終了後はレポートを確認" width={670} height={842} />
-            </picture>
+            <div className="u-pc">
+              <Image src="/img/img_flow--pc.webp" alt="イベント情報を登録、メールでゲストを招待し、当日はQRコードで受付、終了後はレポートを確認" width={670} height={842} loading="lazy" sizes="(max-width: 767px) 0px, 670px" style={{ width: '100%', height: 'auto' }} />
+            </div>
+            <div className="u-sp">
+              <Image src="/img/img_flow--sp.webp" alt="イベント情報を登録、メールでゲストを招待し、当日はQRコードで受付、終了後はレポートを確認" width={670} height={842} loading="lazy" sizes="(min-width: 768px) 0px, 100vw" style={{ width: '100%', height: 'auto' }} />
+            </div>
           </div>
           <div className="p-flow__contents">
             {steps.map((s) => (
               <div className="p-flow__step" key={s.num}>
                 <div className="p-flow__step-num">
                   <div className="p-flow__step-num-icon">
-                    <img src="/img/icon_finger.webp" loading="lazy" alt="" width={111} height={112} />
+                    <Image src="/img/icon_finger.webp" alt="" width={111} height={112} loading="lazy" sizes="56px" style={{ width: '100%', height: 'auto' }} />
                   </div>
                   <div className="p-flow__step-num-text">解決 <span>{s.num}</span></div>
                 </div>

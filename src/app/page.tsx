@@ -1,3 +1,4 @@
+import '@/styles/front-page.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import LpScripts from '@/components/LpScripts'

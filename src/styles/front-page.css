@@ -793,7 +793,7 @@ svg {
   line-height: 1.4;
   letter-spacing: 0em;
   color: #0098BB;
-  font-family: "DM Sans", sans-serif;
+  font-family: var(--font-dm-sans), "DM Sans", sans-serif;
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
@@ -1223,7 +1223,7 @@ svg {
   }
 }
 .p-flow__step-num-text span {
-  font-family: Roboto;
+  font-family: var(--font-roboto), "Roboto", sans-serif;
 }
 
 .p-flow__step-body {
@@ -1742,7 +1742,7 @@ svg {
   font-weight: 700;
   line-height: 1;
   letter-spacing: 0em;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
 }
 @media screen and (max-width: 767px) {
   .p-plan__card-price-num {
@@ -1772,7 +1772,7 @@ svg {
   font-weight: 400;
   line-height: 1.4;
   letter-spacing: 0em;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-roboto), "Roboto", sans-serif;
 }
 @media screen and (max-width: 767px) {
   .p-plan__card-price-tax {
@@ -1818,7 +1818,7 @@ svg {
 .p-plan__card-price-yen {
   font-size: 2.8rem;
   font-weight: 700;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-roboto), "Roboto", sans-serif;
   color: #333;
 }
 

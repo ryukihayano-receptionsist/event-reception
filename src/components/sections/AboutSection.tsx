@@ -27,7 +27,7 @@ export default function AboutSection() {
             width={1280}
             height={566}
             loading="lazy"
-            sizes="100vw"
+            sizes="(max-width: 767px) 0px, 1280px"
             style={{ width: '100%', height: 'auto' }}
           />
         </div>
@@ -38,7 +38,7 @@ export default function AboutSection() {
             width={721}
             height={566}
             loading="lazy"
-            sizes="100vw"
+            sizes="(min-width: 768px) 0px, 100vw"
             style={{ width: '100%', height: 'auto' }}
           />
         </div>

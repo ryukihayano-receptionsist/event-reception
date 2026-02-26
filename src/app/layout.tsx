@@ -22,6 +22,7 @@ const dmSans = DM_Sans({
   weight: ['400', '700'],
   display: 'swap',
   variable: '--font-dm-sans',
+  preload: false,
 })
 
 const poppins = Poppins({
@@ -29,6 +30,7 @@ const poppins = Poppins({
   weight: ['700'],
   display: 'swap',
   variable: '--font-poppins',
+  preload: false,
 })
 
 export const metadata: Metadata = {

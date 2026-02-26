@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const problems = [
   { img: 'img_problem01', title: '入場時の混雑や滞留', text: '1人ずつ名刺などで本人確認するため、受付に時間がかかってしまう。' },
   { img: 'img_problem02', title: '紙やExcelでの管理ミスが多い', text: 'ゲスト一覧表を紙やExcelで管理すると、手作業によるミスが発生してしまう。' },
@@ -22,10 +24,12 @@ export default function ProblemSection() {
           {problems.map((p, i) => (
             <div className="p-problem__card" key={i}>
               <div className="p-problem__card-img">
-                <picture>
-                  <source media="(min-width: 768px)" srcSet={`/img/${p.img}--pc.webp`} />
-                  <img src={`/img/${p.img}--sp.webp`} loading="lazy" alt="" width={260} height={261} />
-                </picture>
+                <div className="u-pc">
+                  <Image src={`/img/${p.img}--pc.webp`} alt="" width={260} height={261} loading="lazy" sizes="260px" style={{ width: '100%', height: 'auto' }} />
+                </div>
+                <div className="u-sp">
+                  <Image src={`/img/${p.img}--sp.webp`} alt="" width={260} height={261} loading="lazy" sizes="50vw" style={{ width: '100%', height: 'auto' }} />
+                </div>
               </div>
               <div className="p-problem__card-body">
                 <h3 className="p-problem__card-title">{p.title}</h3>

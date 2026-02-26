@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const merits = [
   { icon: 'icon_merit01.webp', title: 'ゲストをCSVで一括招待', text: '一括で招待メールを配信し、ゲスト一人一人に個別の受付用QRを送付できます。' },
   { icon: 'icon_merit02.webp', title: 'ゲストはQRで簡単受付', text: 'QRだけで本人確認と受付処理が完了。紙リスト不要で、待ち時間を大幅に削減。' },
@@ -23,7 +25,7 @@ export default function MeritSection() {
           {merits.map((m, i) => (
             <div className="p-merit__card" key={i}>
               <div className="p-merit__card-img">
-                <img src={`/img/${m.icon}`} loading="lazy" alt="" width={160} height={160} />
+                <Image src={`/img/${m.icon}`} alt="" width={160} height={160} loading="lazy" sizes="160px" style={{ width: '100%', height: 'auto' }} />
               </div>
               <h3 className={`p-merit__card-title${m.titleClass ? ` ${m.titleClass}` : ''}`}>{m.title}</h3>
               <p className="p-merit__card-text">{m.text}</p>

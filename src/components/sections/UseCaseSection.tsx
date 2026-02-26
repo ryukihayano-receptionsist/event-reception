@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const useCases = [
   { img: 'img_case01', alt: 'パーティーを楽しむ人々', tags: [['招待制パーティ'], ['懇親会', '交流会']] },
   { img: 'img_case02', alt: '発表会を行う様子', tags: [['メディア向け発表会', '顧客向け新商品発表会']] },
@@ -22,10 +24,12 @@ export default function UseCaseSection() {
           {useCases.map((uc, i) => (
             <div className="p-use-case__item" key={i}>
               <div className="p-use-case__item-img">
-                <picture>
-                  <source media="(min-width: 768px)" srcSet={`/img/${uc.img}--pc.webp`} />
-                  <img src={`/img/${uc.img}--sp.webp`} loading="lazy" alt={uc.alt} width={670} height={401} />
-                </picture>
+                <div className="u-pc">
+                  <Image src={`/img/${uc.img}--pc.webp`} alt={uc.alt} width={670} height={401} loading="lazy" sizes="(max-width: 767px) 0px, 50vw" style={{ width: '100%', height: 'auto' }} />
+                </div>
+                <div className="u-sp">
+                  <Image src={`/img/${uc.img}--sp.webp`} alt={uc.alt} width={670} height={401} loading="lazy" sizes="(min-width: 768px) 0px, 100vw" style={{ width: '100%', height: 'auto' }} />
+                </div>
               </div>
               <div className="p-use-case__item-body">
                 {uc.tags.map((tagGroup, j) => (
