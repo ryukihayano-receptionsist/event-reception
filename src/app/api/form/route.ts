@@ -47,17 +47,19 @@ async function submitToPardot(formData: FormData): Promise<void> {
     return
   }
 
+  // Pardotフォームハンドラーのフィールド名（英語）に合わせる
+  // ※ IVRは日本語フィールド名だが、event-receptionは英語フィールド名
   const params = new URLSearchParams()
   params.append('email', formData.email)
-  params.append('貴社名', formData.company)
-  if (formData.department) params.append('部署', formData.department)
-  params.append('姓', formData.lastName)
-  params.append('名', formData.firstName)
-  if (formData.phone) params.append('電話番号', formData.phone)
-  if (formData.eventType) params.append('イベントの種類', formData.eventType)
-  if (formData.eventTiming) params.append('イベント開催予定時期', formData.eventTiming)
-  if (formData.eventSize) params.append('イベント招待人数規模', formData.eventSize)
-  if (formData.message) params.append('お問い合わせ内容', formData.message)
+  params.append('company', formData.company)
+  if (formData.department) params.append('department', formData.department)
+  params.append('last_name', formData.lastName)
+  params.append('first_name', formData.firstName)
+  if (formData.phone) params.append('phone', formData.phone)
+  if (formData.eventType) params.append('event_type', formData.eventType)
+  if (formData.eventTiming) params.append('event_timing', formData.eventTiming)
+  if (formData.eventSize) params.append('event_size', formData.eventSize)
+  if (formData.message) params.append('comments', formData.message)
 
   try {
     await fetch(endpoint, {
